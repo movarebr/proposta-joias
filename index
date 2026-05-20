@@ -1,9 +1,16 @@
+Aqui está o código HTML atualizado com todas as informações estratégicas levantadas.
+
+Ajustei a redação (copy) para focar no mercado de **alta joalheria**, no ticket médio elevado e no fechamento do faturamento de R$ 2.000,00 no primeiro mês (R$ 1.500 de mensalidade + R$ 500 de setup). Também corrigi uma pequena divergência de classes nos botões finais para que o layout funcione perfeitamente.
+
+Basta copiar e colar no seu editor/hospedagem:
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOVARE — Proposta para [Nome da Empresa]</title>
+    <title>MOVARE — Proposta para Fabiana Mello Joias</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -345,7 +352,6 @@
 </head>
 <body>
 
-<!-- ─── HERO (gradiente escuro) ───────────────────── -->
 <section class="hero">
     <div class="hero-badge">Proposta Personalizada · MOVARE</div>
     <div class="hero-logo">
@@ -356,28 +362,27 @@
             <path d="M16 38c0-3.314 4.477-6 10-6s10 2.686 10 6" stroke="#4CAF92" stroke-width="1.2" fill="none"/>
         </svg>
     </div>
-    <h1>Proposta para<br><em>[Nome da Empresa]</em></h1>
-    <p class="hero-para">Assessoria Remota · Atendimento Estruturado</p>
+    <h1>Proposta para<br><em>Fabiana Mello Joias</em></h1>
+    <p class="hero-para">Assessoria Remota · Atendimento e Estruturação Comercial</p>
     <div class="hero-divider"></div>
     <div class="hero-meta">
         <div class="hero-meta-item">
             <span class="hero-meta-label">Preparada para</span>
-            <span class="hero-meta-value">[Nome do Responsável]</span>
+            <span class="hero-meta-value">Fabiana Mello</span>
         </div>
         <div class="hero-meta-item">
             <span class="hero-meta-label">Data</span>
-            <span class="hero-meta-value">[DD/MM/AAAA]</span>
+            <span class="hero-meta-value">20/05/2026</span>
         </div>
         <div class="hero-meta-item">
             <span class="hero-meta-label">Válida até</span>
-            <span class="hero-meta-value">[DD/MM/AAAA]</span>
+            <span class="hero-meta-value">27/05/2026</span>
         </div>
     </div>
     <div class="hero-scroll"><div class="scroll-line"></div><span>Rolar</span></div>
 </section>
 
 
-<!-- ─── 1. ESPELHO DA REALIDADE (creme) ───────────── -->
 <section class="espelho tema-creme">
     <div class="container">
         <div class="reveal">
@@ -385,96 +390,94 @@
             <h2 class="section-title">O que está <em>acontecendo hoje</em></h2>
         </div>
         <div class="espelho-intro reveal">
-            Hoje o atendimento de <strong>[Nome da Empresa]</strong> está [descreva o cenário em 2–3 linhas com as palavras dele]. Você já percebeu que [principal dor identificada no diagnóstico] — e sabe que isso está custando mais do que parece.
+            Hoje o ateliê <strong>Fabiana Mello Joias</strong> está com um movimento excelente e prestes a receber novos clientes do Instagram. Você já percebeu que parar a produção para enviar orçamentos e fazer agendamentos toma muito do seu tempo criativo — e sabe que a falta de um acompanhamento rigoroso custa caro no mercado de alta joalheria.
         </div>
         <div class="espelho-pontos reveal">
             <div class="espelho-ponto">
                 <div class="espelho-ponto-icon">⚡</div>
-                <p><strong>[Dor 1]</strong> — [Descreva como isso se manifesta no dia a dia do cliente, com as palavras dele.]</p>
+                <p><strong>Gestão de Orçamentos</strong> — Precisar interromper a criação das peças para ir atrás de orçamentos, formatar as informações e enviar para as clientes via WhatsApp.</p>
             </div>
             <div class="espelho-ponto">
                 <div class="espelho-ponto-icon">📉</div>
-                <p><strong>[Dor 2]</strong> — [Descreva o impacto específico que essa dor gera no negócio.]</p>
+                <p><strong>Falta de Follow-up (Retorno)</strong> — Como o dia a dia é corrido, você demora um tempo depois para rever clientes antigas, correndo o risco de deixar esfriar uma venda de peças de alto ticket.</p>
             </div>
             <div class="espelho-ponto">
                 <div class="espelho-ponto-icon">🔁</div>
-                <p><strong>[Dor 3]</strong> — [Descreva o que ele já tentou e por que não funcionou.]</p>
+                <p><strong>Desorganização de Canais</strong> — Misturar o contato pessoal (DDD 11) com o ateliê, precisando urgentemente estruturar o novo WhatsApp com o DDD 61 antes do tráfego pago rodar.</p>
             </div>
         </div>
     </div>
 </section>
 
 
-<!-- ─── 2. CUSTO DE NÃO RESOLVER (verde escuro) ───── -->
 <section class="custo tema-escuro2">
     <div class="container">
         <div class="reveal">
             <p class="section-label">02 · O custo do problema</p>
             <h2 class="section-title">O que esse cenário está <em>custando agora</em></h2>
-            <p class="section-body">Cada dia sem estrutura é receita que escapa. Não porque o produto é ruim — mas porque o canal que deveria converter está deixando oportunidades na mesa.</p>
+            <p class="section-body">Cada dia sem estrutura é receita que escapa. Não porque suas joias não são incríveis — mas porque falhas no retorno aos orçamentos deixam oportunidades na mesa.</p>
         </div>
         <div class="custo-grid reveal">
             <div class="custo-card">
-                <h4>Clientes sem resposta</h4>
-                <p>[Descreva o padrão de perda identificado — ex: mensagens que ficam sem resposta em horários de pico, cliente que vai para o concorrente sem avisar.]</p>
+                <h4>Vendas esfriando no WhatsApp</h4>
+                <p>No nicho de joias de luxo, as vendas exigem atenção e conversas personalizadas. Um orçamento de R$ 3.000,00 esquecido no WhatsApp por falta de tempo é um cliente de ouro que vai para a concorrência sem avisar.</p>
             </div>
             <div class="custo-card">
-                <h4>Atendimento sem padrão</h4>
-                <p>[Descreva o risco de imagem e confiança quando cada pessoa atende diferente — ou quando o próprio dono ainda precisa se envolver.]</p>
+                <h4>Gargalo na Produção</h4>
+                <p>Seu foco principal deve ser criar. Cada hora que você gasta disparando manualmente as artes de cuidados de pós-venda ou ajeitando as colunas do Trello, é uma hora a menos produzindo e expandindo sua marca.</p>
             </div>
         </div>
         <div class="custo-numero reveal">
-            <p class="custo-numero-label">Impacto mensal estimado em oportunidades não aproveitadas</p>
-            <div class="custo-numero-valor">R$ [VALOR]</div>
-            <p class="custo-numero-desc">Baseado no ticket médio de R$ [X] e na estimativa de [Y] atendimentos perdidos por semana que você me informou. Sem contar o custo de reputação.</p>
+            <p class="custo-numero-label">Impacto mínimo estimado por falta de Follow-up Ativo</p>
+            <div class="custo-numero-valor">R$ 3.000,00</div>
+            <p class="custo-numero-desc">Esse é o valor aproximado se você perder apenas <strong>UMA única venda de peça de ouro</strong> no mês por não ter tido tempo de dar um retorno atencioso para a cliente após o orçamento.</p>
         </div>
     </div>
 </section>
 
 
-<!-- ─── 3. SOLUÇÃO (creme dourado) ─────────────────── -->
 <section class="solucao tema-creme-dourado">
     <div class="container">
         <div class="reveal">
             <p class="section-label">03 · A solução</p>
             <h2 class="section-title">O que a MOVARE <em>entrega pra você</em></h2>
-            <p class="section-body">Não vendemos horas. Entregamos resultados com escopo definido — para que você saiba exatamente o que está contratando e o que vai mudar.</p>
+            <p class="section-body">Não vendemos horas. Entregamos uma base comercial sólida para que você saiba exatamente o que está sendo resolvido no seu Trello e WhatsApp.</p>
         </div>
         <div class="solucao-list reveal">
             <div class="solucao-item">
                 <div class="solucao-entrega">
-                    <h4>[Entrega 1]</h4>
-                    <p>[Descreva o que será feito de forma clara e objetiva.]</p>
+                    <h4>Setup Comercial Estratégico</h4>
+                    <p>Criação e configuração do novo WhatsApp Business DDD 61 exclusivo para o ateliê e auditoria no seu Trello para receber a alta demanda do Instagram.</p>
                 </div>
                 <div class="solucao-resultado">
-                    <p>[O resultado que isso gera pro cliente.]</p>
+                    <p>Sua casa totalmente arrumada e profissional antes das campanhas rodarem.</p>
                 </div>
             </div>
             <div class="solucao-item">
                 <div class="solucao-entrega">
-                    <h4>[Entrega 2]</h4>
-                    <p>[Descreva o que será feito.]</p>
+                    <h4>Atendimento e Agendamentos</h4>
+                    <p>Recepção humanizada dos leads, criação de orçamentos e gestão dos agendamentos presenciais para o seu ateliê, rodando diretamente pelo seu fluxo do Trello.</p>
                 </div>
                 <div class="solucao-resultado">
-                    <p>[O resultado que isso gera.]</p>
+                    <p>Suas clientes são atendidas com exclusividade enquanto seu tempo livre aumenta.</p>
                 </div>
             </div>
             <div class="solucao-item">
                 <div class="solucao-entrega">
-                    <h4>[Entrega 3]</h4>
-                    <p>[Descreva o que será feito.]</p>
+                    <h4>Follow-up Ativo de Vendas</h4>
+                    <p>Acompanhamento rigoroso dos orçamentos enviados (ouro e prata). Faremos retornos estratégicos e educados para recuperar negociações abertas.</p>
                 </div>
                 <div class="solucao-resultado">
-                    <p>[O resultado que isso gera.]</p>
+                    <p>Aumento da conversão de vendas e do seu faturamento mensal.</p>
                 </div>
             </div>
             <div class="solucao-item">
                 <div class="solucao-entrega">
-                    <h4>[Entrega 4]</h4>
-                    <p>[Descreva o que será feito.]</p>
+                    <h4>Pós-Venda e Relacionamento</h4>
+                    <p>Envio padronizado das artes de cuidados com a joia e checagem da satisfação da cliente dias após a compra.</p>
                 </div>
                 <div class="solucao-resultado">
-                    <p>[O resultado que isso gera.]</p>
+                    <p>Maior fidelização e chance de compras e indicações futuras.</p>
                 </div>
             </div>
         </div>
@@ -482,7 +485,6 @@
 </section>
 
 
-<!-- ─── 4. O QUE NÃO ENTRA (dark-mid) ─────────────── -->
 <section class="nao-entra tema-escuro3">
     <div class="container">
         <div class="reveal">
@@ -490,19 +492,18 @@
             <h2 class="section-title">O que <em>não está incluído</em></h2>
         </div>
         <div class="nao-entra-box reveal">
-            <p class="nao-entra-intro">Para que a parceria funcione com clareza e sem surpresas, é importante definir o que não faz parte deste pacote. Qualquer item abaixo pode ser adicionado como serviço avulso — basta conversar.</p>
+            <p class="nao-entra-intro">Para que a parceria funcione com clareza e sem surpresas, é importante definir o que não faz parte deste pacote. Qualquer item abaixo pode ser adicionado como serviço avulso caso você precise depois.</p>
             <div class="nao-entra-list">
-                <div class="nao-entra-item">Gestão de redes sociais e criação de conteúdo</div>
-                <div class="nao-entra-item">Atendimento fora do horário comercial acordado</div>
-                <div class="nao-entra-item">Suporte técnico de plataformas e sistemas</div>
-                <div class="nao-entra-item">[Adicione outros limites específicos deste cliente]</div>
+                <div class="nao-entra-item">Criação de novas artes ou peças visuais (utilizaremos o excelente material que você já possui)</div>
+                <div class="nao-entra-item">Gestão de tráfego pago ou anúncios no Instagram</div>
+                <div class="nao-entra-item">Atendimento de suporte fora do horário comercial acordado previamente</div>
+                <div class="nao-entra-item">Contato com fornecedores e produção (nosso foco será 100% no cliente final)</div>
             </div>
         </div>
     </div>
 </section>
 
 
-<!-- ─── 5. INVESTIMENTO (creme) ───────────────────── -->
 <section class="investimento tema-creme">
     <div class="container">
         <div class="reveal">
@@ -511,20 +512,23 @@
         </div>
         <div class="inv-card reveal">
             <div class="inv-header">
-                <p class="inv-pacote-nome">[Nome do Pacote] · MOVARE</p>
+                <p class="inv-pacote-nome">Gestão Comercial Premium · MOVARE</p>
                 <div class="inv-preco">
                     <span class="inv-preco-moeda">R$</span>
-                    <span class="inv-preco-valor">[VALOR]</span>
+                    <span class="inv-preco-valor">1.500</span>
                     <span class="inv-preco-periodo">/mês</span>
                 </div>
-                <p class="inv-contrato">Contrato mínimo de 3 meses · Reajuste anual por IPCA</p>
+                <p style="font-size: 15px; color: var(--green); margin-top: 10px; font-weight: 500; font-style: italic;">
+                    + Setup Inicial de estruturação do WhatsApp 61: R$ 500,00 (Taxa Única)
+                </p>
+                <p class="inv-contrato" style="margin-top: 16px;">Contrato mínimo de 3 meses · Reajuste anual por IPCA</p>
             </div>
             <div class="inv-body">
                 <div class="inv-retorno">
-                    Considerando o impacto estimado de <strong>R$ [VALOR]</strong> em oportunidades não aproveitadas por mês, o retorno sobre esse investimento começa no primeiro mês de operação.
+                    Considerando o ticket médio das peças de ouro, <strong>salvar apenas um orçamento perdido por mês</strong> com o nosso serviço de follow-up já paga todo o investimento dessa gestão e ainda gera lucro líquido para a sua marca.
                 </div>
                 <div class="inv-validade">
-                    Esta proposta é válida até [DD/MM/AAAA]. Após essa data, os valores podem ser revisados.
+                    Esta proposta é válida até 27/05/2026. Após essa data, a disponibilidade na agenda será revista.
                 </div>
             </div>
         </div>
@@ -532,56 +536,34 @@
 </section>
 
 
-<!-- ─── SERVIÇOS ADICIONAIS (dark-mid) ─────────────── -->
 <section class="adicionais tema-escuro4" id="adicionais">
     <div class="container">
         <div class="reveal">
             <p class="section-label">Serviços avulsos</p>
-            <h2 class="section-title">Setups e <em>adicionais estratégicos</em></h2>
-            <p class="section-body">Serviços pontuais para turbinar a estrutura da sua clínica. Taxa única, sem mensalidade.</p>
+            <h2 class="section-title">Outras necessidades <em>estratégicas</em></h2>
+            <p class="section-body">Serviços pontuais para turbinar a estrutura do ateliê quando quiser expandir. Taxa única, sem mensalidade.</p>
         </div>
         <div class="adicionais-grid reveal">
 
             <div class="adicional-card">
                 <span class="adicional-tag">Setup</span>
-                <h3>WhatsApp Business Estratégico</h3>
-                <p>Transformamos seu WhatsApp em funil de vendas: mensagens de saudação/ausência, etiquetas de organização e perfil otimizado.</p>
-                <div class="adicional-preco">R$ 350<span>pagamento único</span></div>
-            </div>
-
-            <div class="adicional-card">
-                <span class="adicional-tag">Setup</span>
-                <h3>Catálogo do WhatsApp</h3>
-                <p>Cadastro dos serviços da clínica com fotos profissionais, descrições persuasivas e links diretos.</p>
-                <div class="adicional-preco">R$ 250<span>até 30 itens</span></div>
-            </div>
-
-            <div class="adicional-card">
-                <span class="adicional-tag">Setup</span>
                 <h3>Google Meu Negócio</h3>
-                <p>Criação ou otimização da ficha no Google: palavras-chave, fotos, horários e botão de agendamento.</p>
+                <p>Criação ou otimização da ficha no Google: palavras-chave para pessoas em Brasília que buscam alta joalheria, fotos, horários e botão de contato.</p>
                 <div class="adicional-preco">R$ 300<span>pagamento único</span></div>
             </div>
 
             <div class="adicional-card">
                 <span class="adicional-tag">Playbook</span>
                 <h3>Scripts de Atendimento</h3>
-                <p>Mapeamento da jornada do paciente + documento oficial com roteiros padronizados, FAQ, quebra de objeções e follow-up.</p>
-                <div class="adicional-preco">R$ 450 – 600<span>taxa única</span></div>
-            </div>
-
-            <div class="adicional-card">
-                <span class="adicional-tag">Setup</span>
-                <h3>Sistema de Agendamento / CRM</h3>
-                <p>Configuração completa do sistema que o cliente contratou (Trinks, Doctoralia ou CRM próprio).</p>
-                <div class="adicional-preco">R$ 400 – 600<span>taxa única</span></div>
+                <p>Mapeamento da jornada do cliente do ateliê + documento oficial com roteiros padronizados, FAQ de cuidados e quebra de objeções para peças de alto valor.</p>
+                <div class="adicional-preco">R$ 450<span>taxa única</span></div>
             </div>
 
             <div class="adicional-card">
                 <span class="adicional-tag">Digital</span>
                 <h3>Formulários Inteligentes</h3>
-                <p>Anamnese digital ou briefing no Google Forms/Typeform com a identidade visual da clínica.</p>
-                <div class="adicional-preco">R$ 150 – 250<span>por formulário</span></div>
+                <p>Briefing de encomendas sob medida no Google Forms/Typeform com a identidade visual da sua marca para captar exatamente o que a cliente quer.</p>
+                <div class="adicional-preco">R$ 150<span>por formulário</span></div>
             </div>
 
         </div>
@@ -589,41 +571,40 @@
 </section>
 
 
-<!-- ─── 6. PRÓXIMOS PASSOS (creme dourado) ─────────── -->
 <section class="passos tema-creme-dourado">
     <div class="container">
         <div class="reveal">
             <p class="section-label">06 · Próximos passos</p>
             <h2 class="section-title">Como <em>começamos</em></h2>
-            <p class="section-body">Após o seu aceite, seguimos um processo rápido e sem burocracia para começarmos ainda essa semana.</p>
+            <p class="section-body">Após o seu aceite, seguimos um processo rápido e sem burocracia para estruturarmos o ateliê ainda essa semana.</p>
         </div>
         <div class="passos-list reveal">
             <div class="passo-item">
                 <div class="passo-dot">01</div>
                 <div class="passo-content">
                     <h3>Seu aceite nesta proposta</h3>
-                    <p>Basta responder confirmando ou clicar no botão ao final desta página. Simples assim.</p>
+                    <p>Basta me responder no WhatsApp confirmando ou clicar no botão ao final desta página. Simples assim.</p>
                 </div>
             </div>
             <div class="passo-item">
                 <div class="passo-dot">02</div>
                 <div class="passo-content">
-                    <h3>Assinatura do contrato</h3>
-                    <p>Enviamos o contrato digital para assinatura com todas as condições acordadas nesta proposta.</p>
+                    <h3>Assinatura e Setup</h3>
+                    <p>Enviamos o contrato digital para assinatura e começamos imediatamente o setup do seu novo número DDD 61.</p>
                 </div>
             </div>
             <div class="passo-item">
                 <div class="passo-dot">03</div>
                 <div class="passo-content">
-                    <h3>Call de onboarding</h3>
-                    <p>Uma conversa rápida para mapear o tom de voz da sua marca, roteiros e acessos necessários.</p>
+                    <h3>Call de alinhamento</h3>
+                    <p>Uma conversa rápida de 20 minutos para entender seu tom de voz exato e pegarmos os acessos do Trello e do catálogo.</p>
                 </div>
             </div>
             <div class="passo-item destaque">
-                <div class="passo-dot">🚀</div>
+                <div class="passo-dot">💎</div>
                 <div class="passo-content">
                     <h3>Início da operação</h3>
-                    <p>A MOVARE entra em ação. Seu atendimento começa a funcionar com processo, padrão e resultado.</p>
+                    <p>A MOVARE entra em ação. Seus orçamentos começam a ser monitorados e você foca apenas em criar suas joias.</p>
                 </div>
             </div>
         </div>
@@ -631,13 +612,12 @@
 </section>
 
 
-<!-- ─── CTA FINAL ─────────────────────────────────── -->
 <section class="cta-final">
     <div class="container">
-        <h2>Pronto para<br><em>resolver isso de vez?</em></h2>
-        <p>Qualquer dúvida antes de aceitar, é só chamar. Estou à disposição.</p>
+        <h2>Pronta para focar na produção<br><em>e deixar o comercial conosco?</em></h2>
+        <p>Qualquer dúvida antes de aceitar, estou 100% à disposição no nosso WhatsApp.</p>
         <div class="cta-buttons">
-            <a href="https://wa.me/5571983136600?text=Ol%C3%A1%2C+aceito+a+proposta+da+MOVARE" class="btn-avançar">
+            <a href="https://wa.me/5571983136600?text=Oi+Ágatha!+Li+a+proposta+e+quero+avan%C3%A7ar+com+a+Gest%C3%A3o+do+Ateli%C3%AA." class="btn-aceitar">
                 Quero avançar
             </a>
             <a href="https://wa.me/5571983136600" class="btn-duvida">
@@ -666,3 +646,5 @@
 
 </body>
 </html>
+
+```
