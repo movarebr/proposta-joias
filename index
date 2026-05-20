@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVARE — Proposta para [Nome da Empresa]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --cream: #F4F0E8;
+            --dark: #111418;
+            --dark-mid: #1C2028;
+            --blue: #2E4057;
+            --accent: #C9A84C;
+            --muted: #7A8090;
+            --green: #4CAF92;
+            --green-light: #5FCFA5;
+            --card-bg: #0d1f18;
+        }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--dark);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* ========== TEMAS DE ALTERNÂNCIA ========== */
+        .tema-escuro { background: var(--dark); color: var(--cream); }
+        .tema-escuro .section-label { color: var(--green); }
+        .tema-escuro .section-label::before { background: var(--green); }
+        .tema-escuro .section-title { color: var(--cream); }
+        .tema-escuro .section-title em { color: var(--green-light); }
+        .tema-escuro .section-body { color: rgba(244,240,232,0.85); }
+
+        .tema-escuro2 { background: #0d1a15; color: var(--cream); }
+        .tema-escuro2 .section-label { color: var(--green); }
+        .tema-escuro2 .section-label::before { background: var(--green); }
+        .tema-escuro2 .section-title { color: var(--cream); }
+        .tema-escuro2 .section-title em { color: var(--green-light); }
+        .tema-escuro2 .section-body { color: rgba(244,240,232,0.85); }
+
+        .tema-escuro3 { background: var(--dark-mid); color: var(--cream); }
+        .tema-escuro3 .section-label { color: var(--green); }
+        .tema-escuro3 .section-label::before { background: var(--green); }
+        .tema-escuro3 .section-title { color: var(--cream); }
+        .tema-escuro3 .section-title em { color: var(--green-light); }
+        .tema-escuro3 .section-body { color: rgba(244,240,232,0.85); }
+
+        .tema-escuro4 { background: var(--dark-mid); color: var(--cream); }
+        .tema-escuro4 .section-label { color: var(--green); }
+        .tema-escuro4 .section-label::before { background: var(--green); }
+        .tema-escuro4 .section-title { color: var(--cream); }
+        .tema-escuro4 .section-title em { color: var(--green-light); }
+        .tema-escuro4 .section-body { color: rgba(244,240,232,0.85); }
+
+        .tema-escuro5 { 
+            background: linear-gradient(135deg, #16241e, #0d1a15, var(--dark)); 
+            color: var(--cream); 
+            border-top: 1px solid rgba(76,175,146,0.15); 
+            border-bottom: 1px solid rgba(76,175,146,0.15); 
+        }
+        .tema-escuro5 .section-label { color: var(--green); }
+        .tema-escuro5 .section-label::before { background: var(--green); }
+        .tema-escuro5 .section-title { color: var(--cream); }
+        .tema-escuro5 .section-title em { color: var(--green-light); }
+        .tema-escuro5 .section-body { color: rgba(244,240,232,0.85); }
+
+        /* Creme: fundo #F4F0E8, texto escuro */
+        .tema-creme { background: var(--cream); color: var(--dark); }
+        .tema-creme .section-label { color: var(--green); }
+        .tema-creme .section-label::before { background: var(--green); }
+        .tema-creme .section-title { color: var(--dark); }
+        .tema-creme .section-title em { color: var(--green); }
+        .tema-creme .section-body { color: rgba(17,20,24,0.75); }
+
+        /* Creme dourado: fundo com tom dourado suave */
+        .tema-creme-dourado { background: linear-gradient(135deg, #F4F0E8 0%, #EDE6D5 50%, #F4F0E8 100%); color: var(--dark); }
+        .tema-creme-dourado .section-label { color: #9A7D32; }
+        .tema-creme-dourado .section-label::before { background: #9A7D32; }
+        .tema-creme-dourado .section-title { color: var(--dark); }
+        .tema-creme-dourado .section-title em { color: #9A7D32; }
+        .tema-creme-dourado .section-body { color: rgba(17,20,24,0.75); }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding: 80px 24px; position: relative; overflow: hidden;
+            background: radial-gradient(ellipse 80% 60% at 50% 0%, #1a2a24 0%, #0d1a15 30%, var(--dark) 70%);
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0; pointer-events: none;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234CAF92' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .hero > * { position: relative; z-index: 1; }
+
+        .hero-badge {
+            display: inline-block; border: 1px solid rgba(76,175,146,0.5);
+            color: var(--green-light); font-size: 11px; font-weight: 500;
+            letter-spacing: 3px; text-transform: uppercase; padding: 8px 20px;
+            border-radius: 100px; margin-bottom: 40px;
+            background: rgba(76,175,146,0.08); animation: fadeUp 0.8s ease both;
+        }
+        .hero-logo { margin-bottom: 28px; animation: fadeUp 0.8s 0.1s ease both; }
+        .hero-logo svg { width: 48px; height: 48px; opacity: 0.9; }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 7vw, 80px);
+            font-weight: 300; line-height: 1.05; color: var(--cream); margin-bottom: 8px;
+            animation: fadeUp 0.8s 0.2s ease both;
+        }
+        .hero h1 em { font-style: italic; color: var(--green-light); }
+
+        .hero-para {
+            font-family: 'Cormorant Garamond', serif; font-size: clamp(15px,2.5vw,20px);
+            font-weight: 300; font-style: italic; color: rgba(95,207,165,0.9);
+            margin-bottom: 20px; animation: fadeUp 0.8s 0.25s ease both;
+        }
+
+        .hero-divider { width: 60px; height: 1px; background: linear-gradient(to right,transparent,var(--green),transparent); margin: 0 auto 40px; animation: fadeUp 0.8s 0.3s ease both; }
+
+        .hero-meta {
+            display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
+            margin-bottom: 52px; animation: fadeUp 0.8s 0.35s ease both;
+        }
+        .hero-meta-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .hero-meta-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+        .hero-meta-value { font-size: 15px; color: var(--cream); font-weight: 500; }
+
+        .hero-scroll { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .hero-scroll span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+        .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--green), transparent); animation: scrollAnim 2s ease infinite; }
+
+        /* ========== LAYOUT BASE ========== */
+        section { padding: 100px 24px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .section-label { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+        .section-label::before { content: ''; display: block; width: 24px; height: 1px; }
+        .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px,5vw,50px); font-weight: 300; line-height: 1.15; margin-bottom: 20px; }
+        .section-title em { font-style: italic; }
+        .section-body { font-size: 16px; line-height: 1.85; }
+
+        /* ========== 1. ESPELHO DA REALIDADE (creme) ========== */
+        .espelho-intro {
+            background: #fff; border-left: 2px solid var(--green);
+            padding: 32px 36px; margin-top: 48px; border-radius: 0 4px 4px 0;
+            font-family: 'Cormorant Garamond', serif; font-size: clamp(18px,3vw,24px);
+            font-weight: 300; font-style: italic; line-height: 1.7; color: rgba(17,20,24,0.9);
+        }
+        .espelho-intro strong { color: var(--green); font-weight: 400; }
+        .espelho-pontos { margin-top: 36px; display: flex; flex-direction: column; gap: 2px; }
+        .tema-creme .espelho-ponto { display: flex; align-items: flex-start; gap: 20px; padding: 24px 28px; background: #fff; transition: background 0.3s; border: 1px solid rgba(76,175,146,0.1); border-radius: 4px; }
+        .tema-creme .espelho-ponto:hover { background: #f8f6f1; }
+        .espelho-ponto-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+        .tema-creme .espelho-ponto p { font-size: 15px; line-height: 1.7; color: rgba(17,20,24,0.85); }
+        .tema-creme .espelho-ponto p strong { color: var(--dark); font-weight: 500; }
+
+        /* ========== 2. CUSTO DE NÃO RESOLVER (verde escuro original) ========== */
+        .custo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 52px; }
+        .tema-escuro2 .custo-card { background: var(--dark); padding: 36px 32px; }
+        .custo-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--cream); margin-bottom: 10px; }
+        .tema-escuro2 .custo-card p { font-size: 14px; line-height: 1.75; color: rgba(244,240,232,0.85); }
+        .custo-numero {
+            margin-top: 48px; padding: 40px; background: var(--dark-mid); text-align: center;
+            border: 1px solid rgba(201,168,76,0.3); position: relative; overflow: hidden;
+        }
+        .custo-numero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,168,76,0.05), transparent); }
+        .custo-numero > * { position: relative; z-index: 1; }
+        .custo-numero-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+        .custo-numero-valor { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px,8vw,80px); font-weight: 300; color: var(--accent); line-height: 1; margin-bottom: 12px; }
+        .custo-numero-desc { font-size: 14px; color: rgba(244,240,232,0.8); max-width: 480px; margin: 0 auto; line-height: 1.6; }
+
+        /* ========== 3. SOLUÇÃO (creme dourado) ========== */
+        .solucao-list { margin-top: 52px; display: flex; flex-direction: column; gap: 2px; }
+        .tema-creme-dourado .solucao-item { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: #fff; overflow: hidden; transition: background 0.3s; border: 1px solid rgba(201,168,76,0.15); border-radius: 4px; }
+        .tema-creme-dourado .solucao-item:hover { background: #faf8f2; }
+        .solucao-entrega { padding: 28px 32px; border-right: 1px solid rgba(201,168,76,0.12); }
+        .tema-creme-dourado .solucao-entrega h4 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--dark); margin-bottom: 8px; }
+        .tema-creme-dourado .solucao-entrega p { font-size: 13px; color: rgba(17,20,24,0.8); line-height: 1.65; }
+        .solucao-resultado { padding: 28px 32px; display: flex; align-items: center; }
+        .tema-creme-dourado .solucao-resultado p { font-size: 13px; color: var(--green); line-height: 1.65; font-style: italic; }
+        .tema-creme-dourado .solucao-resultado p::before { content: '→ '; color: #9A7D32; font-style: normal; }
+
+        /* ========== 4. O QUE NÃO ENTRA (dark-mid) ========== */
+        .nao-entra-box {
+            margin-top: 48px; background: var(--dark); border: 1px solid rgba(201,168,76,0.2);
+            padding: 40px; border-radius: 4px;
+        }
+        .nao-entra-intro { font-size: 14px; color: rgba(244,240,232,0.75); margin-bottom: 28px; line-height: 1.7; }
+        .nao-entra-list { display: flex; flex-direction: column; gap: 12px; }
+        .nao-entra-item { display: flex; align-items: center; gap: 14px; font-size: 14px; color: rgba(244,240,232,0.85); }
+        .nao-entra-item::before { content: '—'; color: var(--accent); flex-shrink: 0; }
+
+        /* ========== 5. INVESTIMENTO (creme) ========== */
+        .inv-card {
+            margin-top: 52px; background: #fff; border: 1px solid rgba(76,175,146,0.2);
+            overflow: hidden; border-radius: 6px;
+        }
+        .inv-header { padding: 40px 44px 32px; border-bottom: 1px solid rgba(76,175,146,0.1); }
+        .tema-creme .inv-pacote-nome { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+        .inv-preco { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+        .inv-preco-moeda { font-size: 16px; color: #7A8090; }
+        .tema-creme .inv-preco-valor { font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; color: var(--dark); line-height: 1; }
+        .inv-preco-periodo { font-size: 14px; color: #7A8090; }
+        .tema-creme .inv-contrato { font-size: 13px; color: rgba(17,20,24,0.6); margin-top: 6px; }
+        .inv-body { padding: 36px 44px; }
+        .inv-retorno {
+            background: rgba(76,175,146,0.06); border-left: 2px solid var(--green);
+            padding: 20px 24px; margin-bottom: 36px;
+            font-size: 14px; color: rgba(17,20,24,0.8); line-height: 1.7;
+        }
+        .inv-retorno strong { color: var(--dark); }
+        .tema-creme .inv-validade {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 13px; color: rgba(17,20,24,0.6);
+        }
+        .inv-validade::before { content: '⏳'; font-size: 14px; }
+
+        /* ========== SERVIÇOS ADICIONAIS (dark-mid original) ========== */
+        .adicionais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 48px;
+        }
+        .adicional-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(76,175,146,0.2);
+            border-radius: 6px;
+            padding: 28px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .adicional-card:hover {
+            border-color: rgba(76,175,146,0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(76,175,146,0.1);
+        }
+        .adicional-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--green-light);
+            margin-bottom: 16px;
+            padding: 4px 10px;
+            border: 1px solid rgba(95,207,165,0.3);
+            border-radius: 100px;
+            align-self: flex-start;
+            background: rgba(76,175,146,0.1);
+        }
+        .adicional-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        .adicional-card p {
+            font-size: 13px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.75);
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        .adicional-preco {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: #FFFFFF;
+            padding-top: 16px;
+            border-top: 1px solid rgba(95,207,165,0.15);
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .adicional-preco span {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.5px;
+        }
+
+        /* ========== 6. PRÓXIMOS PASSOS (creme dourado) ========== */
+        .passos-list { margin-top: 56px; position: relative; }
+        .passos-list::before { content: ''; position: absolute; left: 27px; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, #9A7D32, transparent); }
+        .passo-item { display: flex; gap: 36px; padding: 0 0 44px 0; }
+        .passo-dot { width: 56px; height: 56px; border-radius: 50%; background: #fff; border: 1px solid rgba(154,125,50,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Cormorant Garamond', serif; font-size: 20px; color: #9A7D32; position: relative; z-index: 1; }
+        .passo-content { padding-top: 12px; flex: 1; }
+        .tema-creme-dourado .passo-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--dark); margin-bottom: 6px; }
+        .tema-creme-dourado .passo-content p { font-size: 14px; color: rgba(17,20,24,0.75); line-height: 1.7; }
+        .passo-item.destaque .passo-dot { background: var(--green); color: #fff; border-color: var(--green); }
+
+        /* ========== CTA FINAL ========== */
+        .cta-final {
+            text-align: center; padding: 120px 24px;
+            background: radial-gradient(ellipse 80% 60% at 50% 50%, #1a2a24 0%, #0d1a15 40%, var(--dark) 70%);
+            border-top: 1px solid rgba(76,175,146,0.12);
+        }
+        .cta-final h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px,6vw,68px); font-weight: 300; color: var(--cream); margin-bottom: 20px; line-height: 1.1; }
+        .cta-final h2 em { font-style: italic; color: var(--green-light); }
+        .cta-final p { font-size: 16px; color: var(--muted); margin-bottom: 52px; max-width: 460px; margin-left: auto; margin-right: auto; }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-aceitar {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: linear-gradient(135deg, var(--green), #3A8F6E);
+            color: #fff; font-size: 14px; font-weight: 500; letter-spacing: 1px;
+            text-transform: uppercase; padding: 18px 40px; border-radius: 4px;
+            text-decoration: none; transition: all 0.3s;
+        }
+        .btn-aceitar:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(76,175,146,0.3); }
+        .btn-duvida {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: transparent; border: 1px solid rgba(76,175,146,0.4);
+            color: var(--green-light); font-size: 14px; font-weight: 400;
+            padding: 18px 40px; border-radius: 4px; text-decoration: none; transition: all 0.3s;
+        }
+        .btn-duvida:hover { background: rgba(76,175,146,0.08); border-color: var(--green); }
+
+        footer { background: #0a0e14; padding: 48px 24px; text-align: center; border-top: 1px solid rgba(76,175,146,0.08); }
+        footer p { font-size: 13px; color: rgba(122,128,144,0.6); }
+        footer strong { color: var(--green); }
+
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scrollAnim { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .custo-grid { grid-template-columns: 1fr; }
+            .solucao-item { grid-template-columns: 1fr; }
+            .solucao-entrega { border-right: none; border-bottom: 1px solid rgba(76,175,146,0.08); }
+            .passos-list::before { display: none; }
+            .adicionais-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ─── HERO (gradiente escuro) ───────────────────── -->
+<section class="hero">
+    <div class="hero-badge">Proposta Personalizada · MOVARE</div>
+    <div class="hero-logo">
+        <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="25" stroke="#4CAF92" stroke-width="1"/>
+            <path d="M26 14v12h10" stroke="#4CAF92" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="26" cy="26" r="3" fill="#4CAF92"/>
+            <path d="M16 38c0-3.314 4.477-6 10-6s10 2.686 10 6" stroke="#4CAF92" stroke-width="1.2" fill="none"/>
+        </svg>
+    </div>
+    <h1>Proposta para<br><em>[Nome da Empresa]</em></h1>
+    <p class="hero-para">Assessoria Remota · Atendimento Estruturado</p>
+    <div class="hero-divider"></div>
+    <div class="hero-meta">
+        <div class="hero-meta-item">
+            <span class="hero-meta-label">Preparada para</span>
+            <span class="hero-meta-value">[Nome do Responsável]</span>
+        </div>
+        <div class="hero-meta-item">
+            <span class="hero-meta-label">Data</span>
+            <span class="hero-meta-value">[DD/MM/AAAA]</span>
+        </div>
+        <div class="hero-meta-item">
+            <span class="hero-meta-label">Válida até</span>
+            <span class="hero-meta-value">[DD/MM/AAAA]</span>
+        </div>
+    </div>
+    <div class="hero-scroll"><div class="scroll-line"></div><span>Rolar</span></div>
+</section>
+
+
+<!-- ─── 1. ESPELHO DA REALIDADE (creme) ───────────── -->
+<section class="espelho tema-creme">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">01 · O cenário atual</p>
+            <h2 class="section-title">O que está <em>acontecendo hoje</em></h2>
+        </div>
+        <div class="espelho-intro reveal">
+            Hoje o atendimento de <strong>[Nome da Empresa]</strong> está [descreva o cenário em 2–3 linhas com as palavras dele]. Você já percebeu que [principal dor identificada no diagnóstico] — e sabe que isso está custando mais do que parece.
+        </div>
+        <div class="espelho-pontos reveal">
+            <div class="espelho-ponto">
+                <div class="espelho-ponto-icon">⚡</div>
+                <p><strong>[Dor 1]</strong> — [Descreva como isso se manifesta no dia a dia do cliente, com as palavras dele.]</p>
+            </div>
+            <div class="espelho-ponto">
+                <div class="espelho-ponto-icon">📉</div>
+                <p><strong>[Dor 2]</strong> — [Descreva o impacto específico que essa dor gera no negócio.]</p>
+            </div>
+            <div class="espelho-ponto">
+                <div class="espelho-ponto-icon">🔁</div>
+                <p><strong>[Dor 3]</strong> — [Descreva o que ele já tentou e por que não funcionou.]</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ─── 2. CUSTO DE NÃO RESOLVER (verde escuro) ───── -->
+<section class="custo tema-escuro2">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">02 · O custo do problema</p>
+            <h2 class="section-title">O que esse cenário está <em>custando agora</em></h2>
+            <p class="section-body">Cada dia sem estrutura é receita que escapa. Não porque o produto é ruim — mas porque o canal que deveria converter está deixando oportunidades na mesa.</p>
+        </div>
+        <div class="custo-grid reveal">
+            <div class="custo-card">
+                <h4>Clientes sem resposta</h4>
+                <p>[Descreva o padrão de perda identificado — ex: mensagens que ficam sem resposta em horários de pico, cliente que vai para o concorrente sem avisar.]</p>
+            </div>
+            <div class="custo-card">
+                <h4>Atendimento sem padrão</h4>
+                <p>[Descreva o risco de imagem e confiança quando cada pessoa atende diferente — ou quando o próprio dono ainda precisa se envolver.]</p>
+            </div>
+        </div>
+        <div class="custo-numero reveal">
+            <p class="custo-numero-label">Impacto mensal estimado em oportunidades não aproveitadas</p>
+            <div class="custo-numero-valor">R$ [VALOR]</div>
+            <p class="custo-numero-desc">Baseado no ticket médio de R$ [X] e na estimativa de [Y] atendimentos perdidos por semana que você me informou. Sem contar o custo de reputação.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ─── 3. SOLUÇÃO (creme dourado) ─────────────────── -->
+<section class="solucao tema-creme-dourado">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">03 · A solução</p>
+            <h2 class="section-title">O que a MOVARE <em>entrega pra você</em></h2>
+            <p class="section-body">Não vendemos horas. Entregamos resultados com escopo definido — para que você saiba exatamente o que está contratando e o que vai mudar.</p>
+        </div>
+        <div class="solucao-list reveal">
+            <div class="solucao-item">
+                <div class="solucao-entrega">
+                    <h4>[Entrega 1]</h4>
+                    <p>[Descreva o que será feito de forma clara e objetiva.]</p>
+                </div>
+                <div class="solucao-resultado">
+                    <p>[O resultado que isso gera pro cliente.]</p>
+                </div>
+            </div>
+            <div class="solucao-item">
+                <div class="solucao-entrega">
+                    <h4>[Entrega 2]</h4>
+                    <p>[Descreva o que será feito.]</p>
+                </div>
+                <div class="solucao-resultado">
+                    <p>[O resultado que isso gera.]</p>
+                </div>
+            </div>
+            <div class="solucao-item">
+                <div class="solucao-entrega">
+                    <h4>[Entrega 3]</h4>
+                    <p>[Descreva o que será feito.]</p>
+                </div>
+                <div class="solucao-resultado">
+                    <p>[O resultado que isso gera.]</p>
+                </div>
+            </div>
+            <div class="solucao-item">
+                <div class="solucao-entrega">
+                    <h4>[Entrega 4]</h4>
+                    <p>[Descreva o que será feito.]</p>
+                </div>
+                <div class="solucao-resultado">
+                    <p>[O resultado que isso gera.]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ─── 4. O QUE NÃO ENTRA (dark-mid) ─────────────── -->
+<section class="nao-entra tema-escuro3">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">04 · Limites do escopo</p>
+            <h2 class="section-title">O que <em>não está incluído</em></h2>
+        </div>
+        <div class="nao-entra-box reveal">
+            <p class="nao-entra-intro">Para que a parceria funcione com clareza e sem surpresas, é importante definir o que não faz parte deste pacote. Qualquer item abaixo pode ser adicionado como serviço avulso — basta conversar.</p>
+            <div class="nao-entra-list">
+                <div class="nao-entra-item">Gestão de redes sociais e criação de conteúdo</div>
+                <div class="nao-entra-item">Atendimento fora do horário comercial acordado</div>
+                <div class="nao-entra-item">Suporte técnico de plataformas e sistemas</div>
+                <div class="nao-entra-item">[Adicione outros limites específicos deste cliente]</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ─── 5. INVESTIMENTO (creme) ───────────────────── -->
+<section class="investimento tema-creme">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">05 · Investimento</p>
+            <h2 class="section-title">O que você <em>investe nessa mudança</em></h2>
+        </div>
+        <div class="inv-card reveal">
+            <div class="inv-header">
+                <p class="inv-pacote-nome">[Nome do Pacote] · MOVARE</p>
+                <div class="inv-preco">
+                    <span class="inv-preco-moeda">R$</span>
+                    <span class="inv-preco-valor">[VALOR]</span>
+                    <span class="inv-preco-periodo">/mês</span>
+                </div>
+                <p class="inv-contrato">Contrato mínimo de 3 meses · Reajuste anual por IPCA</p>
+            </div>
+            <div class="inv-body">
+                <div class="inv-retorno">
+                    Considerando o impacto estimado de <strong>R$ [VALOR]</strong> em oportunidades não aproveitadas por mês, o retorno sobre esse investimento começa no primeiro mês de operação.
+                </div>
+                <div class="inv-validade">
+                    Esta proposta é válida até [DD/MM/AAAA]. Após essa data, os valores podem ser revisados.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ─── SERVIÇOS ADICIONAIS (dark-mid) ─────────────── -->
+<section class="adicionais tema-escuro4" id="adicionais">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">Serviços avulsos</p>
+            <h2 class="section-title">Setups e <em>adicionais estratégicos</em></h2>
+            <p class="section-body">Serviços pontuais para turbinar a estrutura da sua clínica. Taxa única, sem mensalidade.</p>
+        </div>
+        <div class="adicionais-grid reveal">
+
+            <div class="adicional-card">
+                <span class="adicional-tag">Setup</span>
+                <h3>WhatsApp Business Estratégico</h3>
+                <p>Transformamos seu WhatsApp em funil de vendas: mensagens de saudação/ausência, etiquetas de organização e perfil otimizado.</p>
+                <div class="adicional-preco">R$ 350<span>pagamento único</span></div>
+            </div>
+
+            <div class="adicional-card">
+                <span class="adicional-tag">Setup</span>
+                <h3>Catálogo do WhatsApp</h3>
+                <p>Cadastro dos serviços da clínica com fotos profissionais, descrições persuasivas e links diretos.</p>
+                <div class="adicional-preco">R$ 250<span>até 30 itens</span></div>
+            </div>
+
+            <div class="adicional-card">
+                <span class="adicional-tag">Setup</span>
+                <h3>Google Meu Negócio</h3>
+                <p>Criação ou otimização da ficha no Google: palavras-chave, fotos, horários e botão de agendamento.</p>
+                <div class="adicional-preco">R$ 300<span>pagamento único</span></div>
+            </div>
+
+            <div class="adicional-card">
+                <span class="adicional-tag">Playbook</span>
+                <h3>Scripts de Atendimento</h3>
+                <p>Mapeamento da jornada do paciente + documento oficial com roteiros padronizados, FAQ, quebra de objeções e follow-up.</p>
+                <div class="adicional-preco">R$ 450 – 600<span>taxa única</span></div>
+            </div>
+
+            <div class="adicional-card">
+                <span class="adicional-tag">Setup</span>
+                <h3>Sistema de Agendamento / CRM</h3>
+                <p>Configuração completa do sistema que o cliente contratou (Trinks, Doctoralia ou CRM próprio).</p>
+                <div class="adicional-preco">R$ 400 – 600<span>taxa única</span></div>
+            </div>
+
+            <div class="adicional-card">
+                <span class="adicional-tag">Digital</span>
+                <h3>Formulários Inteligentes</h3>
+                <p>Anamnese digital ou briefing no Google Forms/Typeform com a identidade visual da clínica.</p>
+                <div class="adicional-preco">R$ 150 – 250<span>por formulário</span></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ─── 6. PRÓXIMOS PASSOS (creme dourado) ─────────── -->
+<section class="passos tema-creme-dourado">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">06 · Próximos passos</p>
+            <h2 class="section-title">Como <em>começamos</em></h2>
+            <p class="section-body">Após o seu aceite, seguimos um processo rápido e sem burocracia para começarmos ainda essa semana.</p>
+        </div>
+        <div class="passos-list reveal">
+            <div class="passo-item">
+                <div class="passo-dot">01</div>
+                <div class="passo-content">
+                    <h3>Seu aceite nesta proposta</h3>
+                    <p>Basta responder confirmando ou clicar no botão ao final desta página. Simples assim.</p>
+                </div>
+            </div>
+            <div class="passo-item">
+                <div class="passo-dot">02</div>
+                <div class="passo-content">
+                    <h3>Assinatura do contrato</h3>
+                    <p>Enviamos o contrato digital para assinatura com todas as condições acordadas nesta proposta.</p>
+                </div>
+            </div>
+            <div class="passo-item">
+                <div class="passo-dot">03</div>
+                <div class="passo-content">
+                    <h3>Call de onboarding</h3>
+                    <p>Uma conversa rápida para mapear o tom de voz da sua marca, roteiros e acessos necessários.</p>
+                </div>
+            </div>
+            <div class="passo-item destaque">
+                <div class="passo-dot">🚀</div>
+                <div class="passo-content">
+                    <h3>Início da operação</h3>
+                    <p>A MOVARE entra em ação. Seu atendimento começa a funcionar com processo, padrão e resultado.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ─── CTA FINAL ─────────────────────────────────── -->
+<section class="cta-final">
+    <div class="container">
+        <h2>Pronto para<br><em>resolver isso de vez?</em></h2>
+        <p>Qualquer dúvida antes de aceitar, é só chamar. Estou à disposição.</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/5571983136600?text=Ol%C3%A1%2C+aceito+a+proposta+da+MOVARE" class="btn-avançar">
+                Quero avançar
+            </a>
+            <a href="https://wa.me/5571983136600" class="btn-duvida">
+                Tenho uma dúvida
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p><strong>MOVARE</strong> · Assessoria Remota · @movare.br · (71) 98313-6600</p>
+</footer>
+
+<script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                entry.target.style.transitionDelay = (i % 3) * 0.1 + 's';
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
